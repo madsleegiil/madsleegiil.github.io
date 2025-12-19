@@ -4,6 +4,7 @@ export interface Post {
     title: string;
     slug: string;
     date: string;
+    imagePath: string;
     content: string;
 }
 
@@ -19,6 +20,7 @@ export const posts: Post[] = Object.entries(modules)
             title: parsed.attributes.title,
             slug: parsed.attributes.slug,
             date: date,
+            imagePath: parsed.attributes.imagePath,
             content: parsed.body
         };
     })
