@@ -1,6 +1,6 @@
 ---
-title: "En test"
-date: "2025-12-19"
+title: "Min første bloggpost"
+slug: "min-forste-bloggpost"
 ---
 
-Dette er en test
+Dette er innholdet i min første bloggpost.

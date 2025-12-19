@@ -1,5 +1,5 @@
 import {posts} from "./posts.ts";
-import Markdown from "react-markdown";
+import {Link} from "react-router-dom";
 
 
 function App() {
@@ -9,7 +9,9 @@ function App() {
             <h1>Blogg</h1>
             <h3>Poster</h3>
             {posts.map((post) => (
-                <div><Markdown>{post}</Markdown></div>
+                <div key={post.slug}>
+                    <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                </div>
             ))}
         </div>
     )
