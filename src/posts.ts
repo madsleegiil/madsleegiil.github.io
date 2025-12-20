@@ -16,12 +16,14 @@ export interface ImageGallery {
     date: string;
     imagePath: string;
     fileName: string;
-    images: {
-        path: string,
-        alt?: string,
-        caption?: string
-    }[];
+    images: Image[];
     type: "imagegallery"
+}
+
+export interface Image {
+    path: string,
+    alt?: string,
+    caption?: string
 }
 
 type FrontMatter =
