@@ -18,7 +18,7 @@ export interface ImageGallery {
     fileName: string;
     images: {
         path: string,
-        alt: string,
+        alt?: string,
         caption?: string
     }[];
     type: "imagegallery"
