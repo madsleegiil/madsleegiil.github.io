@@ -84,7 +84,7 @@ export const ImageGalleryView: FunctionComponent<Props> = ({ imageGallery }) => 
                     onTouchStart={handleTouchStart}
                     onTouchEnd={handleTouchEnd}
                 >
-                    <div className="relative max-w-4xl max-h-full" onClick={(e) => e.stopPropagation()}>
+                    <div className="relative max-w-full max-h-full" onClick={(e) => e.stopPropagation()}>
                         <figure>
                             <img src={currentImage.path} alt={currentImage.alt} className="max-w-full max-h-[90vh]"/>
                             {currentImage.caption && (
