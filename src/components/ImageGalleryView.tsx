@@ -81,7 +81,7 @@ export const ImageGalleryView: FunctionComponent<Props> = ({ imageGallery }) => 
 
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-0.5">
                 {imageGallery.images.map((image, index) => (
-                    <div key={index} className="overflow-hidden sm:mb-0">
+                    <div key={index} className="overflow-hidden sm:mb-0 aspect-[4/3]">
                         <div className="sm:block cursor-pointer" onClick={() => openModal(index)}>
                             <img src={image.path} alt={image.alt} className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-200"/>
                         </div>
