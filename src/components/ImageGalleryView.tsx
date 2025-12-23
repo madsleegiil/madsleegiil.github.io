@@ -74,10 +74,12 @@ export const ImageGalleryView: FunctionComponent<Props> = ({ imageGallery }) => 
     const currentImage = currentIndex !== null ? imageGallery.images[currentIndex] : null;
 
     return (
-        <div>
-            <h1 className="text-3xl font-bold mb-2">{imageGallery.title}</h1>
-            <p className="text-gray-700 mb-4">{formatDateReadable(imageGallery.date)}</p>
-            <p className="my-4">{imageGallery.introduction}</p>
+        <div className="w-screen -mx-4 px-0 sm:w-auto sm:mx-0 sm:px-0"> { /* For å få full bredde av galleri på mobil  */ }
+            <div className="px-4 sm:px-0"> { /* For å få padding rundt tittel og intro på mobil */ }
+                <h1 className="text-3xl font-bold mb-2">{imageGallery.title}</h1>
+                <p className="text-gray-700 mb-4">{formatDateReadable(imageGallery.date)}</p>
+                <p className="my-4">{imageGallery.introduction}</p>
+            </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-0.5">
                 {imageGallery.images.map((image, index) => (
