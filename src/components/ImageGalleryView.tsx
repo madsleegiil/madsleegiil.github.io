@@ -1,5 +1,5 @@
 import { useState, type FunctionComponent, useEffect } from "react";
-import type { ImageGallery } from "../posts.ts";
+import type {Image, ImageGallery} from "../posts.ts";
 import { formatDateReadable } from "../utils.ts";
 
 type Props = {
@@ -73,6 +73,9 @@ export const ImageGalleryView: FunctionComponent<Props> = ({ imageGallery }) => 
 
     const currentImage = currentIndex !== null ? imageGallery.images[currentIndex] : null;
 
+    const imagePositionFocus = (image: Image) =>
+        image.focus ? { objectPosition: image.focus } : {};
+
     return (
         <div className="-mx-3 px-0 sm:w-auto sm:mx-0 sm:px-0"> { /* For å få bredere galleri på mobil  */ }
             <div className="px-3 sm:px-0"> { /* For å få padding rundt tittel og intro på mobil */ }
@@ -83,9 +86,9 @@ export const ImageGalleryView: FunctionComponent<Props> = ({ imageGallery }) => 
 
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-0.5">
                 {imageGallery.images.map((image, index) => (
-                    <div key={index} className="overflow-hidden sm:mb-0 aspect-[4/3]">
-                        <div className="sm:block cursor-pointer" onClick={() => openModal(index)}>
-                            <img src={image.path} alt={image.alt} className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-200"/>
+                    <div key={index} className="overflow-hidden sm:mb-0">
+                        <div className="sm:block cursor-pointer overflow-hidden aspect-[4/3] bg-cover hover:scale-105 transition-transform duration-200" onClick={() => openModal(index)}>
+                            <img src={image.path} alt={image.alt} className="w-full h-full object-cover" style={imagePositionFocus(image)}/>
                         </div>
                     </div>
                 ))}

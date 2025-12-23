@@ -26,7 +26,8 @@ export interface ImageGallery {
 export interface Image {
     path: string,
     alt?: string,
-    caption?: string
+    caption?: string,
+    focus?: string,
 }
 
 type FrontMatter =
@@ -46,6 +47,7 @@ type FrontMatter =
         path: string;
         alt: string;
         caption?: string;
+        focus?: string,
     }[];
     introduction: string;
     tags: string[];
