@@ -1,9 +1,11 @@
 import { useState } from "react";
 
-function App() {
-    const [lang, setLang] = useState("no");
+type Lang = "no" | "en" | "es" | "ko";
 
-    const content = {
+function App() {
+    const [lang, setLang] = useState<Lang>("no");
+
+    const content: Record<Lang, string> = {
         no: "Hei, jeg er Mads.",
         en: "Hi, I'm Mads.",
         es: "Hola, soy Mads.",
